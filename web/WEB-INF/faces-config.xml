@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>PAGE_2</from-outcome>
+            <to-view-id>/recipe03_06b.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/recipe03_06b.xhtml</from-view-id>
+        <navigation-case>
+         
+            <from-outcome>PAGE_1</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+ 
+    
+    <navigation-rule>
+        <navigation-case>
+            
+            <from-action>#{navigationController.login}</from-action>
+            <if>#{navigationController.authenticated}</if>
+            <to-view-id>/recipe03_06d.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <application>
+ 
+	 
+ 
+    </application>
+    
+    <multi-templates>
+        <mappings>
+            <view pattern="" templates="lunar_eclipse"/>
+        </mappings>
+        <templates>
+            <template id="lunar_eclipse" href="/resources/lunar_eclipse"/>
+            <template id="lookat" href="/resources/lookat"/>
+        </templates>
+    </multi-templates>
+    
+
+    
+</faces-config>
